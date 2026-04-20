@@ -5,7 +5,7 @@ int main(){
 
     int n;
     scanf("%d",&n);
-int a[n];
+int a[n+1];
     for(int i = 0;i<n;i++){
         scanf("%d",&a[i]);
     }
@@ -13,7 +13,16 @@ int a[n];
     int idx,val;
     scanf("%d%d",&idx,&val);
 
-    for(int i = n+1; i>idx;i--)
+    for(int i = n; i>=idx+1;i--){
+        a[i] = a[i-1];
+        
+    }
+
+    a[idx] = val;
+
+    for(int i =  0;i<=n;i++){
+        printf("%d ",a[i]);
+    }
 
 
 
